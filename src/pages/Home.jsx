@@ -10,28 +10,36 @@ export default function Home() {
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <div className="rounded-lg overflow-hidden shadow">
-          <img
-            src="imageplaceholder.com"
-            alt="Placeholder 1"
-            className="w-full h-auto"
-          />
-          <div className="p-4 text-center">Category One</div>
+          <div className="h-48 w-full overflow-hidden">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=2013&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Headphones"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-4 text-center">Audio Gear</div>
         </div>
+
         <div className="rounded-lg overflow-hidden shadow">
-          <img
-            src="imageplaceholder.com"
-            alt="Placeholder 2"
-            className="w-full h-auto"
-          />
-          <div className="p-4 text-center">Category Two</div>
+          <div className="h-48 w-full overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1739444929408-a1f782b8e3ee?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Trainers"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-4 text-center">Footwear</div>
         </div>
+
         <div className="rounded-lg overflow-hidden shadow">
-          <img
-            src="imageplaceholder.com"
-            alt="Placeholder 3"
-            className="w-full h-auto"
-          />
-          <div className="p-4 text-center">Category Three</div>
+          <div className="h-48 w-full overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Watch"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-4 text-center">Accessories</div>
         </div>
       </div>
     </div>
