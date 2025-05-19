@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useCart } from "../contexts/CartContext";
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [quantities, setQuantities] = useState({});
   const [error, setError] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -111,6 +113,7 @@ export default function Shop() {
 
             <button
               type="button"
+              onClick={() => addToCart(product, quantities[product.id] || 1)}
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               Add to Cart

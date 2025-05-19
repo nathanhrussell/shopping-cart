@@ -6,6 +6,8 @@ export default function Navbar() {
   const { getItemCount } = useCart();
   const itemCount = getItemCount();
 
+  const isShopPage = location.pathname === "/shop";
+
   return (
     <div className="bg-gray-800 text-white shadow w-full">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
@@ -15,24 +17,23 @@ export default function Navbar() {
         <div className="flex items-center space-x-6">
           <Link
             to="/"
-            className={`hover:underline ${
-              location.pathname === "/" ? "underline" : ""
-            }`}
+            className={`hover:underline ${!isShopPage ? "underline" : ""}`}
           >
             Home
           </Link>
           <Link
             to="/shop"
-            className={`hover:underline ${
-              location.pathname === "/shop" ? "underline" : ""
-            }`}
+            className={`hover:underline ${!isShopPage ? "underline" : ""}`}
           >
             Shop
           </Link>
-          {location.pathname === "/shop" && (
+          {isShopPage && (
             <div className="ml-4 flex items-center space-x-3">
               <span className="text-sm">🛒 {itemCount} items</span>
-              <button className="bg-blue-600 px-3 py-1 rounded hover:bg-blue-700 text-sm">
+              <button
+                type="button"
+                className="bg-blue-600 px-3 py-1 rounded hover:bg-blue-700 text-sm"
+              >
                 Go to Checkout
               </button>
             </div>
