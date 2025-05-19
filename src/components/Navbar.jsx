@@ -12,9 +12,6 @@ export default function Navbar() {
     <div className="bg-gray-800 text-white shadow w-full">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="text-xl font-bold">
-          <Link to="/" data-testid="nav-home-link">
-            Home
-          </Link>
           <Link to="/shop" data-testid="nav-shop-link">
             My Shop
           </Link>
