@@ -16,7 +16,7 @@ export default function Navbar() {
             Home
           </Link>
           <Link to="/shop" data-testid="nav-shop-link">
-            🛒 My Shop
+            My Shop
           </Link>
         </div>
         <div className="flex items-center space-x-6">
