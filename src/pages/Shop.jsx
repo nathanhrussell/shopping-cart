@@ -6,6 +6,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(true);
   const [quantities, setQuantities] = useState({});
   const [error, setError] = useState(null);
+  const [message, setMessage] = useState("");
   const { addToCart } = useCart();
 
   useEffect(() => {
@@ -67,6 +68,11 @@ export default function Shop() {
   return (
     <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
       <h1 className="text-3xl font-bold mb-6">Shop</h1>
+      {message && (
+        <div className="mb-4 p-3 rounded bg-green-100 text-green-800 text-sm font-medium border border-green-300 shadow">
+          {message}
+        </div>
+      )}
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {products.map((product) => (
           <div
@@ -113,7 +119,11 @@ export default function Shop() {
 
             <button
               type="button"
-              onClick={() => addToCart(product, quantities[product.id] || 1)}
+              onClick={() => {
+                addToCart(product, quantities[product.id] || 1);
+                setMessage(`Added "${product.title}" to cart`);
+                setTimeout(() => setMessage(""), 3000);
+              }}
               className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
             >
               Add to Cart
